@@ -44,13 +44,17 @@ begin
               
   apply_test_cases : process is
     procedure apply_test
-      ( a_test, b_test, c_test, d_test : in std_logic) is
+      -- ( input_test : in std_logic_vector(3 downto 0) is
+      ( e0, e1, e2, e3 : in std_logic) is
     begin 
-      -- i_a <= a_test;
-      -- i_b <= b_test;
-      -- i_c <= c_test;
-      -- i_d <= d_test;
-      
+      -- i_a <= e0;
+      -- i_b <= e1;
+      -- i_c <= e2;
+      -- i_d <= e3;
+      i_code(0) <= e0;
+      i_code(1) <= e1;
+      i_code(2) <= e2;
+      i_code(3) <= e3;
       
       
       wait for 1 ms;
@@ -59,6 +63,7 @@ begin
   begin
     for i in 0 to 18 loop
       apply_test(input(3), input(2), input(1), input(0));
+      -- apply_test(input);
       
       -- i_code <= input;
       -- i_code <= "0010";
@@ -71,7 +76,7 @@ begin
   
   
     -- -- test
-    apply_test('0', '0', '0', '0');
+    -- apply_test('0', '0', '0', '0');
     -- apply_test('0', '1', '0', '0');
     -- apply_test('1', '1', '1', '1');
 
@@ -99,12 +104,12 @@ end architecture verify;
               
   -- apply_test_cases : process is
     -- procedure apply_test
-      -- ( a_test, b_test, c_test, d_test : in std_logic) is
+      -- ( e0, e1, e2, e3 : in std_logic) is
     -- begin 
-      -- i_a <= a_test;
-      -- i_b <= b_test;
-      -- i_c <= c_test;
-      -- i_d <= d_test;
+      -- i_a <= e0;
+      -- i_b <= e1;
+      -- i_c <= e2;
+      -- i_d <= e3;
       -- wait for 1 ms;
     -- end procedure apply_test;
     
