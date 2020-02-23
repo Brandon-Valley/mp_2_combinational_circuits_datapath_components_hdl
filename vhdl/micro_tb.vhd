@@ -57,7 +57,7 @@ begin
     end procedure apply_test;
     
   begin
-    for i in 0 to 10 loop
+    for i in 0 to 34 loop
       apply_test(input);
       input <= input + "0001";
      end loop;    

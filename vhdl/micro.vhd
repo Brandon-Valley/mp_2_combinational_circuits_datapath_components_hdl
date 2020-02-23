@@ -47,9 +47,24 @@ end micro;
 architecture equation of micro is
   begin
 
-    o_A <= '1';
-    o_L <= '1';
-    o_B <= '1';
+    o_A <= 'Z' when i_en = '0'      else
+           '1' when i_code = "1010" or
+                    i_code = "1011" or
+                    i_code = "1100" else '0';
+       
+    o_L <= 'Z' when i_en = '0'      else
+           '1' when i_code = "0011" or
+                    i_code = "0100" or
+                    i_code = "0010" or
+                    i_code = "1110" else '0';
+                
+    o_B <= 'Z' when i_en = '0'      else
+           '1' when i_code = "1111" else '0';                
+                
+                
+           -- ;
+    -- o_L <= '1';
+    -- o_B <= '1';
 
   -- o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
   -- o_1 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '1' else '1';
