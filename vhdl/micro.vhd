@@ -1,9 +1,9 @@
--- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__MUX_4_1_2_bit.do
+-- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__micro.do
 library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity MUX_4_1_2_bit is
+entity micro is
   port ( 
         i_en       : in  std_logic;        
         i_code_0   : in  std_logic_vector(1 downto 0); 
@@ -13,11 +13,11 @@ entity MUX_4_1_2_bit is
         i_sel_code : in  std_logic_vector(1 downto 0); 
         o_code     : out std_logic_vector(1 downto 0)); 
 
-end MUX_4_1_2_bit;
+end micro;
 
 
 -- Component Model
-architecture equation of MUX_4_1_2_bit is
+architecture equation of micro is
   component MUX_4_1 is
   port ( 
         i_en       : in  std_logic;
