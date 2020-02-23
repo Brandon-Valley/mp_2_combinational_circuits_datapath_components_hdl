@@ -2,28 +2,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- SMALLER ??????????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 entity MUX_4_1 is
   port ( 
-         i_a : in std_logic;
-         i_b : in std_logic;
-         i_c : in std_logic;
-         i_d : in std_logic;
-         
-         i_cs     : in std_logic;
-         i_n_cs_0 : in std_logic;
-         i_n_cs_1 : in std_logic;
-         
-         o_0 : out std_logic;
-         o_1 : out std_logic;
-         o_2 : out std_logic;
-         o_3 : out std_logic;
-         o_4 : out std_logic;
-         o_5 : out std_logic;
-         o_6 : out std_logic;
-         o_7 : out std_logic;
-         o_8 : out std_logic;
-         o_9 : out std_logic);
+        i_en       : in  std_logic;
+        i_code     : in  std_logic_vector(3 downto 0);
+        i_sel_code : in  std_logic_vector(1 downto 0);
+        o_f        : out std_logic);
        
 end MUX_4_1;
 
@@ -32,16 +16,10 @@ end MUX_4_1;
 architecture equation of MUX_4_1 is
   begin
 
-  o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
-  o_1 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '1' else '1';
-  o_2 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '0' else '1';
-  o_3 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '1' else '1';
-  o_4 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '0' else '1';
-  o_5 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '1' else '1';
-  o_6 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '0' else '1';
-  o_7 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '1' else '1';
-  o_8 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
-  o_9 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '1' else '1';
+  o_f <= '1' when  (i_sel_code = "00" and i_en = '1' and i_code(0) = '1') or 
+                   (i_sel_code = "01" and i_en = '1' and i_code(1) = '1') or 
+                   (i_sel_code = "10" and i_en = '1' and i_code(2) = '1') or 
+                   (i_sel_code = "11" and i_en = '1' and i_code(3) = '1') else '0';
     
     
 end architecture equation;
@@ -49,7 +27,21 @@ end architecture equation;
 
     
     
+-- //  Behavior Model
+-- module MUX_4_1_v
+  -- (
+  -- input        i_en,
+  -- input  [3:0] i_code,
+  -- input  [1:0] i_sel_code, 
+  -- output       o_f);
+  
 
+  -- assign o_f = i_sel_code == 2'b00 & i_code[0] & i_en ? 1 :
+               -- i_sel_code == 2'b01 & i_code[1] & i_en ? 1 :
+               -- i_sel_code == 2'b10 & i_code[2] & i_en ? 1 :
+               -- i_sel_code == 2'b11 & i_code[3] & i_en ? 1 : 0;
+  
+-- endmodule
 
 
 
