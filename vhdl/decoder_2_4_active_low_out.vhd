@@ -1,9 +1,9 @@
--- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__micro.do
+-- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__decoder_2_4_active_low_out.do
 library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity micro is
+entity decoder_2_4_active_low_out is
   port ( 
   
         i_en   : in  std_logic;
@@ -12,10 +12,10 @@ entity micro is
         o_L    : out std_logic;
         o_B    : out std_logic);
 
-end micro;
+end decoder_2_4_active_low_out;
 
 
-architecture equation of micro is
+architecture equation of decoder_2_4_active_low_out is
   begin
 
     o_A <= 'Z' when i_en = '0'      else
