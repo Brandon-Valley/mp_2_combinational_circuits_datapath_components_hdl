@@ -1,4 +1,4 @@
--- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__SN74145.do
+-- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__SN74145.do
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -37,19 +37,32 @@ architecture equation of SN74145 is
   begin
 
 
-  o_0 <= '1';
-  o_1 <= '1';
-  o_2 <= '1';
-  o_3 <= '1';
-  o_4 <= '1';
-  o_5 <= '1';
-  o_6 <= '1';
-  o_7 <= '0';
-  o_8 <= '1';
-  o_9 <= '1';
+  -- o_0 <= '0' when ( not ?? i_a AND not ?? i_b AND not ?? i_c AND not i_d ) else '1';
+  -- o_0 <= '0' when  i_a = '0'; i_b = '0'; i_c = '0'; i_b = '0'; else '1';
+  o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
+  o_1 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '1' else '1';
+  o_2 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '0' else '1';
+  o_3 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '1' else '1';
+  o_4 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '0' else '1';
+  o_5 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '1' else '1';
+  o_6 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '0' else '1';
+  o_7 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '1' else '1';
+  o_8 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
+  o_9 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '1' else '1';
 
+  
 
-
+   
+  -- assign o_0 = ( ~ i_a & ~ i_b & ~ i_c & ~ i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_1 = ( ~ i_a & ~ i_b & ~ i_c &   i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_2 = ( ~ i_a & ~ i_b &   i_c & ~ i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_3 = ( ~ i_a & ~ i_b &   i_c &   i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_4 = ( ~ i_a &   i_b & ~ i_c & ~ i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_5 = ( ~ i_a &   i_b & ~ i_c &   i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_6 = ( ~ i_a &   i_b &   i_c & ~ i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_7 = ( ~ i_a &   i_b &   i_c &   i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_8 = (   i_a & ~ i_b & ~ i_c & ~ i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
+  -- assign o_9 = (   i_a & ~ i_b & ~ i_c &   i_d ) & (i_cs | ~i_n_cs_0 | ~i_n_cs_1) ? 0 : 1;
 
 
     -- -- o_f <= (i_a or i_b or i_c or i_d);
