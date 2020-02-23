@@ -1,14 +1,14 @@
--- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__SN74145.do
+-- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__MUX_4_1_2_bit.do
 
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 
-entity SN74145_tb is
-end entity SN74145_tb;
+entity MUX_4_1_2_bit_tb is
+end entity MUX_4_1_2_bit_tb;
 
-architecture verify of SN74145_tb is
+architecture verify of MUX_4_1_2_bit_tb is
   signal i_a      : std_logic;
   signal i_b      : std_logic;
   signal i_c      : std_logic;
@@ -32,7 +32,7 @@ architecture verify of SN74145_tb is
   signal input : std_logic_vector (6 downto 0) := "0000000";
 
 begin
-  duv: entity work.SN74145(equation)
+  duv: entity work.MUX_4_1_2_bit(equation)
 
     port map( i_a      => i_a     ,  
               

@@ -1,9 +1,9 @@
--- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__SN74145.do
+-- python C:\Users\BrANDon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__MUX_4_1_2_bit.do
 library ieee;
 use ieee.std_logic_1164.all;
 
-
-entity SN74145 is
+-- SMALLER ??????????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+entity MUX_4_1 is
   port ( 
          i_a : in std_logic;
          i_b : in std_logic;
@@ -25,11 +25,11 @@ entity SN74145 is
          o_8 : out std_logic;
          o_9 : out std_logic);
        
-end SN74145;
+end MUX_4_1;
 
 
 
-architecture equation of SN74145 is
+architecture equation of MUX_4_1 is
   begin
 
   o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' else '1';
