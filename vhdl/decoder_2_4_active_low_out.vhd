@@ -2,8 +2,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- sim:/decoder_2_4_active_low_out_tb/i_code \
--- sim:/decoder_2_4_active_low_out_tb/0_code_n 
+
 entity decoder_2_4_active_low_out is
   port ( 
   
@@ -16,7 +15,10 @@ end decoder_2_4_active_low_out;
 architecture equation of decoder_2_4_active_low_out is
   begin
 
-    o_code_n <= "0010";
+    o_code_n <= "1110" when i_code = "00" else
+                "1101" when i_code = "01" else
+                "1011" when i_code = "10" else
+                "0111";-- when i_code = "11" else '
     
     -- o_A <= 'Z' when i_en = '0'      else
            -- '1' when i_code = "1010" or

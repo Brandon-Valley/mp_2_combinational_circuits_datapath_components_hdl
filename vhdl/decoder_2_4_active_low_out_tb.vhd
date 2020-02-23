@@ -14,12 +14,6 @@ architecture verify of decoder_2_4_active_low_out_tb is
   signal i_code   : std_logic_vector(1 downto 0);
   signal o_code_n : std_logic_vector(3 downto 0);
 
-  -- signal i_en   : std_logic;
-  -- signal i_code : std_logic_vector(3 downto 0);
-  -- signal o_A    : std_logic;
-  -- signal o_L    : std_logic;
-  -- signal o_B    : std_logic;
-
 
   signal input : std_logic_vector (1 downto 0) := "00"; -- must be correct
 
