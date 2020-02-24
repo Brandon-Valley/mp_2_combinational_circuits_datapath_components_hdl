@@ -5,25 +5,20 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 
-  -- (input  [3:0] i_code,
-   -- output [1:0] o_code,
-   -- output       o_valid);
 entity priority_enc_8_3_tb is
 end entity priority_enc_8_3_tb;
 
 architecture verify of priority_enc_8_3_tb is
-  -- signal i_a   : std_logic;
-  -- signal i_b   : std_logic;
-  -- signal i_c   : std_logic;
-  -- signal i_d   : std_logic;
-  -- signal o_f   : std_logic;
-  -- signal input : std_logic_vector (3 downto 0) := "0000";
+
+
+  signal i_code : std_logic_vector(7 downto 0);
+  signal o_code : std_logic_vector(2 downto 0);
   
-  signal i_code : std_logic_vector(3 downto 0);
-  signal o_code : std_logic_vector(1 downto 0);
-  signal o_valid: std_logic;
+  -- signal i_code : std_logic_vector(3 downto 0);
+  -- signal o_code : std_logic_vector(1 downto 0);
+  -- signal o_valid: std_logic;
   
-  signal input : std_logic_vector (3 downto 0) := "0000";
+  signal input : std_logic_vector (7 downto 0) := "00000000";
 
 
   
@@ -36,34 +31,39 @@ begin
               -- i_c => i_c,
               -- i_d => i_d,
               -- o_f => o_f);
-    port map( 
-              i_code => i_code,
-              o_code => o_code,
-              o_valid => o_valid);
+    port map(i_code => i_code,
+             o_code => o_code);
+    
+    
+    
+    
+    
+              -- i_code => i_code,
+              -- o_code => o_code,
+              -- o_valid => o_valid);
 
               
   apply_test_cases : process is
     procedure apply_test
-      -- ( input_test : in std_logic_vector(3 downto 0) is
-      ( e0, e1, e2, e3 : in std_logic) is
+      ( input_test : in std_logic_vector(7 downto 0)) is
+      -- ( e0, e1, e2, e3 : in std_logic) is
     begin 
-      -- i_a <= e0;
-      -- i_b <= e1;
-      -- i_c <= e2;
-      -- i_d <= e3;
-      i_code(0) <= e0;
-      i_code(1) <= e1;
-      i_code(2) <= e2;
-      i_code(3) <= e3;
+  
+      i_code <= input_test;
+  
+      -- i_code(0) <= e0;
+      -- i_code(1) <= e1;
+      -- i_code(2) <= e2;
+      -- i_code(3) <= e3;
       
       
       wait for 1 ms;
     end procedure apply_test;
     
   begin
-    for i in 0 to 18 loop
-      apply_test(input(3), input(2), input(1), input(0));
-      -- apply_test(input);
+    for i in 0 to 258 loop
+      -- apply_test(input(3), input(2), input(1), input(0));
+      apply_test(input);
       
       -- i_code <= input;
       -- i_code <= "0010";
