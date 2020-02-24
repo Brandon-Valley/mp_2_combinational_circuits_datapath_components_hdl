@@ -18,22 +18,5 @@ architecture equation of decoder_2_4_active_low_out is
     o_code_n <= "1110" when i_code = "00" else
                 "1101" when i_code = "01" else
                 "1011" when i_code = "10" else
-                "0111";-- when i_code = "11" else '
-    
-    -- o_A <= 'Z' when i_en = '0'      else
-           -- '1' when i_code = "1010" or
-                    -- i_code = "1011" or
-                    -- i_code = "1100" else '0';
-       
-    -- o_L <= 'Z' when i_en = '0'      else
-           -- '1' when i_code = "0011" or
-                    -- i_code = "0100" or
-                    -- i_code = "0010" or
-                    -- i_code = "1110" else '0';
-                
-    -- o_B <= 'Z' when i_en = '0'      else
-           -- '1' when i_code = "1111" else '0';                
-
-    
-    
+                "0111";
 end architecture equation;
