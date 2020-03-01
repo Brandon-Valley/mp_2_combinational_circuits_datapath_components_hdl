@@ -26,9 +26,6 @@ architecture verify of priority_enc_4_2_tb is
   signal input : std_logic_vector (3 downto 0) := "0000";
 
 
-  
-  
-
 begin
   duv: entity work.priority_enc_4_2(equation)
     -- port map( i_a => i_a,
@@ -42,27 +39,27 @@ begin
               o_valid => o_valid);
 
               
-  apply_test_cases : process is
-    procedure apply_test
-      -- ( input_test : in std_logic_vector(3 downto 0) is
-      ( e0, e1, e2, e3 : in std_logic) is
-    begin 
-      -- i_a <= e0;
-      -- i_b <= e1;
-      -- i_c <= e2;
-      -- i_d <= e3;
-      i_code(0) <= e0;
-      i_code(1) <= e1;
-      i_code(2) <= e2;
-      i_code(3) <= e3;
+  -- apply_test_cases : process is
+    -- procedure apply_test
+      -- -- ( input_test : in std_logic_vector(3 downto 0) is
+      -- ( e0, e1, e2, e3 : in std_logic) is
+    -- begin 
+      -- -- i_a <= e0;
+      -- -- i_b <= e1;
+      -- -- i_c <= e2;
+      -- -- i_d <= e3;
+      -- i_code(0) <= e0;
+      -- i_code(1) <= e1;
+      -- i_code(2) <= e2;
+      -- i_code(3) <= e3;
       
       
-      wait for 1 ms;
-    end procedure apply_test;
+      -- wait for 1 ms;
+    -- end procedure apply_test;
     
-  begin
-    for i in 0 to 18 loop
-      apply_test(input(3), input(2), input(1), input(0));
+  -- begin
+    -- for i in 0 to 18 loop
+      -- apply_test(input(3), input(2), input(1), input(0));
       -- apply_test(input);
       
       -- i_code <= input;
@@ -70,8 +67,35 @@ begin
       -- wait for 1 ms;
       
       
-      input <= input + "0001";
-     end loop;
+      
+      -- VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+      
+      -- wait for 1 ms;
+      
+      i_code <= "0010";
+      
+      -- i_code(0) <= '0';
+      -- i_code(1) <= '0';
+      -- i_code(2) <= '0';
+      -- i_code(3) <= '0';
+      
+      -- wait for 1 ms;
+      
+      -- i_code(0) <= '1';
+      -- i_code(1) <= '1';
+      -- i_code(2) <= '1';
+      -- i_code(3) <= '1';
+      
+      i_code <= "0010" after 1ms;
+
+      
+      
+      -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      
+      
+      
+      -- input <= input + "0001";
+     -- end loop;
   
   
   
@@ -82,8 +106,8 @@ begin
 
 
     
-    wait;
-end process apply_test_cases;
+    -- wait;
+-- end process apply_test_cases;
 
 end architecture verify;
 
