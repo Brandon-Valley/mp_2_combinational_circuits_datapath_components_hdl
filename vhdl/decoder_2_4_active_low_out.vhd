@@ -5,7 +5,6 @@ use ieee.std_logic_1164.all;
 
 entity decoder_2_4_active_low_out is
   port ( 
-  
         i_code   : in  std_logic_vector(1 downto 0);
         o_code_n : out std_logic_vector(3 downto 0));
 
@@ -20,3 +19,30 @@ architecture equation of decoder_2_4_active_low_out is
                 "1011" when i_code = "10" else
                 "0111";
 end architecture equation;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
