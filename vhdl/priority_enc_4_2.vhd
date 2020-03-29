@@ -27,10 +27,6 @@ architecture equation of priority_enc_4_2 is
                i_code(2) or 
                i_code(3); 
     
-
-    
-    
-    
 end architecture equation;
 
 
