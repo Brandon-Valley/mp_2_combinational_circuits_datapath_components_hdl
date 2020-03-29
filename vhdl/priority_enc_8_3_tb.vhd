@@ -1,4 +1,4 @@
--- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__priority_enc_4_2.do
+-- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__priority_enc_8_3.do
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -8,10 +8,10 @@ use ieee.std_logic_unsigned.all;
   -- (input  [3:0] i_code,
    -- output [1:0] o_code,
    -- output       o_valid);
-entity priority_enc_4_2_tb is
-end entity priority_enc_4_2_tb;
+entity priority_enc_8_3_tb is
+end entity priority_enc_8_3_tb;
 
-architecture verify of priority_enc_4_2_tb is
+architecture verify of priority_enc_8_3_tb is
   
   signal i_code : std_logic_vector(3 downto 0);
   signal o_code : std_logic_vector(1 downto 0);
@@ -21,7 +21,7 @@ architecture verify of priority_enc_4_2_tb is
 
 
 begin
-  duv: entity work.priority_enc_4_2(equation)
+  duv: entity work.priority_enc_8_3(equation)
     -- port map( i_a => i_a,
               -- i_b => i_b,
               -- i_c => i_c,
