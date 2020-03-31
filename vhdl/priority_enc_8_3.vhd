@@ -45,21 +45,21 @@ architecture cmpnt of priority_enc_8_3 is
 
   component priority_enc_4_2 is
   port ( 
-           i_code_pe42 : in  std_logic_vector(3 downto 0);
+           i_code : in  std_logic_vector(3 downto 0);
            o_code : out std_logic_vector(1 downto 0);
            o_valid: out std_logic);
   end component priority_enc_4_2;
 
   component MUX_2_1 is
   port ( 
-         i_code_m : in  std_logic_vector(1 downto 0);
+         i_code : in  std_logic_vector(1 downto 0);
          i_sel  : in  std_logic;
          o_f    : out std_logic);
   end component MUX_2_1;
     
   component priority_enc_2_1 is
   port ( 
-         i_code_pe : in  std_logic_vector(1 downto 0);
+         i_code : in  std_logic_vector(1 downto 0);
          o_f    : out std_logic);
   end component priority_enc_2_1;
     
@@ -70,16 +70,29 @@ architecture cmpnt of priority_enc_8_3 is
   signal f0_v    : std_logic; 
   signal f1_code : std_logic_vector(1 downto 0); 
   signal f1_v    : std_logic; 
+  
+  -- signal not_f0_v     : std_logic := '1';
+  signal not_f0_v     : std_logic;
+  signal MUX_0_i_code : std_logic_vector(1 downto 0);
+  signal MUX_1_i_code : std_logic_vector(1 downto 0);
+  signal pe21_i_code  : std_logic_vector(1 downto 0);
+ 
     
   -- priority_enc_4_2_v__always pe42_0 (i_code[3:0], f0_code, f0_v);  
   -- priority_enc_4_2_v__always pe42_1 (i_code[7:4], f1_code, f1_v);  
   
+
 
   -- MUX_2_1_v MUX21_0(1'b1, {f1_code[0], f0_code[0]}, ~f0_v, o_code[0]);  
   -- MUX_2_1_v MUX21_1(1'b1, {f1_code[1], f0_code[1]}, ~f0_v, o_code[1]);  
   -- priority_enc_2_1_v pe21_2({f1_v      , f0_v      }, o_code[2]);  
        
   begin
+    MUX_0_i_code <= (f1_code(0), f0_code(0));
+    MUX_1_i_code <= (f1_code(1), f0_code(1));
+    not_f0_v     <= NOT f0_v;
+    pe21_i_code  <= (f1_v, f0_v);
+  
     priorityenc420 : priority_enc_4_2 port map (i_code(3 downto 0), f0_code, f0_v);
     priorityenc421 : priority_enc_4_2 port map (i_code(7 downto 4), f1_code, f1_v);
     
@@ -87,10 +100,10 @@ architecture cmpnt of priority_enc_8_3 is
     -- MUX211 : MUX_2_1 port map ((f1_code(1), f0_code(1)), !f0_v, o_code(1));
     -- MUX210 : MUX_2_1 port map ("01", !f0_v, o_code(0));
     -- MUX211 : MUX_2_1 port map ("01", !f0_v, o_code(1));
-    MUX210 : MUX_2_1 port map ("01", '1', o_code(0));
-    MUX211 : MUX_2_1 port map ("01", '1', o_code(1));
+    MUX210 : MUX_2_1 port map (MUX_0_i_code, not_f0_v, o_code(0));
+    MUX211 : MUX_2_1 port map (MUX_1_i_code, not_f0_v, o_code(1));
     -- priority_enc210 : priority_enc_2_1 port map ((f1_v, f0_v), o_code(2));
-    priority_enc210 : priority_enc_2_1 port map ("01", o_code(2));
+    priority_enc210 : priority_enc_2_1 port map (pe21_i_code, o_code(2));
     end architecture cmpnt;
     
     

@@ -14,11 +14,11 @@ architecture verify of priority_enc_8_3_tb is
   signal i_code : std_logic_vector(7 downto 0);
   signal o_code : std_logic_vector(2 downto 0);
   
-  signal input : std_logic_vector (3 downto 0) := "0000";
+  signal input : std_logic_vector (7 downto 0) := "00000000";
 
 
 begin
-  duv: entity work.priority_enc_8_3(equation)
+  duv: entity work.priority_enc_8_3(cmpnt)
 
     port map( 
               i_code => i_code,
@@ -26,13 +26,17 @@ begin
 
   apply_test_cases : process is
     procedure apply_test
-      ( input_test : in std_logic_vector(3 downto 0)) is
+      ( input_test : in std_logic_vector(7 downto 0)) is
     begin 
 
-      i_code(0) <= input(0);
-      i_code(1) <= input(1);
-      i_code(2) <= input(2);
-      i_code(3) <= input(3);      
+      i_code(0 ) <= input(0);
+      i_code(1 ) <= input(1);
+      i_code(2 ) <= input(2);
+      i_code(3 ) <= input(3);      
+      i_code(4 ) <= input(4);      
+      i_code(5 ) <= input(5);      
+      i_code(6 ) <= input(6);      
+      i_code(7 ) <= input(7);      
       
       wait for 1 ms;
     end procedure apply_test;
@@ -45,7 +49,7 @@ begin
 
       -- wait for 1 ms;
 
-      input <= input + "0001";
+      input <= input + "00000001";
     end loop;
 
     

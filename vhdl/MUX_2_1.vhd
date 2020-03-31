@@ -18,7 +18,7 @@ entity MUX_2_1 is
   port ( 
          i_code : in  std_logic_vector(1 downto 0);
          i_sel  : in  std_logic;
-         o_f    : out std_logic;
+         o_f    : out std_logic);
          
 end MUX_2_1;
 
@@ -26,11 +26,27 @@ end MUX_2_1;
 
 architecture equation of MUX_2_1 is
   begin
-    o_code <= i_code(1) when  i_sel else 
-              i_code(0) when ~i_sel else '0';
+    o_f <= i_code(1) when  i_sel = '1' else 
+           i_code(0) when  i_sel = '0' else '0';
 end architecture equation;
 
 
+
+-- entity priority_enc_2_1 is
+  -- port ( 
+         -- i_code : in  std_logic_vector(1 downto 0);
+         -- o_f    : out std_logic);
+         
+-- end priority_enc_2_1;
+
+
+
+-- architecture equation of priority_enc_2_1 is
+  -- begin
+
+    -- o_f <= '0' when i_code(0) = '1' else 
+           -- '1' when i_code(1) = '1';
+-- end architecture equation;
 
 
 
