@@ -32,7 +32,8 @@ void priority_enc_4_2__tb()
     //=============================//
     //  Select Which Model to Test
     //=============================//
-    priority_enc_4_2__equation DUT("priority_enc_4_2.h");
+    //priority_enc_4_2__equation DUT("priority_enc_4_2.h");
+    priority_enc_4_2__behavior DUT("priority_enc_4_2.h");
 
 
     //=============================//

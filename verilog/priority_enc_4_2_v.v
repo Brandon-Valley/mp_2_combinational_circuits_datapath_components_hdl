@@ -22,12 +22,6 @@ module priority_enc_4_2_v__no_always
                    i_code[3] ? 1'b1:
                    1'b0;
            
-           
-  // // equation model
-  // assign o_valid  = i_code[0] |
-                    // i_code[1] |
-                    // i_code[2] |
-                    // i_code[3];
                  
 endmodule
 
@@ -75,15 +69,7 @@ module priority_enc_4_2_v__equation
 
   assign o_code[0] = ( i_code[2] & i_code[3] ) | ( i_code[0]  & i_code[1] & i_code[3] );
   assign o_code[1] = ( i_code[1] & i_code[2]  & i_code[3] ) | ( i_code[0] & i_code[2] & i_code[3] );
-
-
-  // assign o_code[0] = 1'b1;
-  // assign o_code[1] = 1'b1;
-
-
-           
-           
-           
+ 
   // equation model
   assign o_valid  = i_code[0] |
                     i_code[1] |

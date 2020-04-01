@@ -17,7 +17,7 @@ SC_MODULE(decoder_2_4_active_low_out__behavior)
     // Architecture Statement - Similar to Process Statement
     void p1()
     {
-        if      (i_code.read() == "00") o_code = "1110";
+        if      (i_code.read() == "00") o_code = "1110"; 
         else if (i_code.read() == "01") o_code = "1101";
         else if (i_code.read() == "10") o_code = "1011";
         else                            o_code = "0111";

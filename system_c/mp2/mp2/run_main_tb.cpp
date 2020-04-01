@@ -18,13 +18,13 @@ int sc_main(int argc, char* argv[])
     //or4_gate__tb();
     //xor4_gate__tb();
 
-    //priority_enc_4_2__tb();
+    priority_enc_4_2__tb();
     //decoder_2_4_active_low_out__tb();
     //SN74145__tb();
     //deMUX_1_8__tb();
     //MUX_4_1_8_bit__tb();
     //micro__tb();
-    MUX_4_1__tb();
+    //MUX_4_1__tb();
 
     return 0;
 }
