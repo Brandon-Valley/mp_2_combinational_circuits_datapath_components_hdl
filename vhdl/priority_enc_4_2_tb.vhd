@@ -19,7 +19,7 @@ architecture verify of priority_enc_4_2_tb is
 
 
 begin
-  duv: entity work.priority_enc_4_2(equation)
+  duv: entity work.priority_enc_4_2(behavior)
 
     port map( 
               i_code => i_code,

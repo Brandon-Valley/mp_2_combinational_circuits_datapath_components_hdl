@@ -13,7 +13,7 @@ end priority_enc_4_2;
 
 
 
-architecture equation of priority_enc_4_2 is
+architecture behavior of priority_enc_4_2 is
   begin
 
     o_code <= "00" when i_code(0) = '1' else 
@@ -22,12 +22,18 @@ architecture equation of priority_enc_4_2 is
               "11" when i_code(3) = '1' else 
               "00";
               
-    o_valid <= i_code(0) or 
-               i_code(1) or 
-               i_code(2) or 
-               i_code(3); 
+              
+    o_valid <= '1' when i_code(0) = '1' else 
+               '1' when i_code(1) = '1' else 
+               '1' when i_code(2) = '1' else 
+               '1' when i_code(3) = '1' else 
+               '0';         
+    -- o_valid <= i_code(0) or 
+               -- i_code(1) or 
+               -- i_code(2) or 
+               -- i_code(3); 
     
-end architecture equation;
+end architecture behavior;
 
 
 
