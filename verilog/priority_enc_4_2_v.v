@@ -1,7 +1,7 @@
 // -- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__priority_enc_4_2_v.do
 //
 ////////////////////////////////
-// Not Using Always
+// Not Using Always - Behavior
 ////////////////////////////////
 module priority_enc_4_2_v__no_always
   (input  [3:0] i_code,
@@ -16,11 +16,18 @@ module priority_enc_4_2_v__no_always
                   i_code[3] ? 2'b11:
                   2'b00;
            
-  // equation model
-  assign o_valid  = i_code[0] |
-                    i_code[1] |
-                    i_code[2] |
-                    i_code[3];
+  assign o_valid = i_code[0] ? 1'b1:
+                   i_code[1] ? 1'b1:
+                   i_code[2] ? 1'b1:
+                   i_code[3] ? 1'b1:
+                   1'b0;
+           
+           
+  // // equation model
+  // assign o_valid  = i_code[0] |
+                    // i_code[1] |
+                    // i_code[2] |
+                    // i_code[3];
                  
 endmodule
 
@@ -56,11 +63,32 @@ module priority_enc_4_2_v__always (
 endmodule
 
 
+////////////////////////////////
+//  Equation Model
+////////////////////////////////
+module priority_enc_4_2_v__equation
+  (input  [3:0] i_code,
+   output [1:0] o_code,
+   output       o_valid);
+   
 
 
+  assign o_code[0] = ( i_code[2] & i_code[3] ) | ( i_code[0]  & i_code[1] & i_code[3] );
+  assign o_code[1] = ( i_code[1] & i_code[2]  & i_code[3] ) | ( i_code[0] & i_code[2] & i_code[3] );
 
 
+  // assign o_code[0] = 1'b1;
+  // assign o_code[1] = 1'b1;
 
 
-
+           
+           
+           
+  // equation model
+  assign o_valid  = i_code[0] |
+                    i_code[1] |
+                    i_code[2] |
+                    i_code[3];
+                 
+endmodule
 
