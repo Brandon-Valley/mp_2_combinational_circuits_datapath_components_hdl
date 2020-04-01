@@ -36,6 +36,20 @@ architecture behavior of priority_enc_4_2 is
 end architecture behavior;
 
 
+architecture equation of priority_enc_4_2 is
+  begin
+
+    o_code(0) <= ( i_code(2) = '1' and i_code(3) = '0' ) or ( i_code(0) = '1' and i_code(1) = '0' and i_code(3) = '0' );
+    o_code(1) <= ( i_code(1) = '1' and i_code(2) = '0' and i_code(3) = '0' ) or (i_code(0) = '1' and i_code(2) = '0' and i_code(3) = '0');
+
+
+    o_valid <= i_code(0) or 
+               i_code(1) or 
+               i_code(2) or 
+               i_code(3); 
+    
+end architecture equation;
+
 
 
     
