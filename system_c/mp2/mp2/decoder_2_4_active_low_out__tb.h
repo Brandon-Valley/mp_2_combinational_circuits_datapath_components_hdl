@@ -32,8 +32,8 @@ void decoder_2_4_active_low_out__tb()
     //=============================//
     //  Select Which Model to Test
     //=============================//
-    //decoder_2_4_active_low_out__equation DUT("decoder_2_4_active_low_out.h");
-    decoder_2_4_active_low_out__behavior DUT("decoder_2_4_active_low_out.h");
+    decoder_2_4_active_low_out__equation DUT("decoder_2_4_active_low_out.h");
+    //decoder_2_4_active_low_out__behavior DUT("decoder_2_4_active_low_out.h");
 
 
 

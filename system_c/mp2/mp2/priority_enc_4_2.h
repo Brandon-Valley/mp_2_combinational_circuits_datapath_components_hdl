@@ -18,20 +18,11 @@ SC_MODULE(priority_enc_4_2__behavior)
     // Architecture Statement - Similar to Process Statement
     void p1()
     {
-        if      (i_code.read()[0].to_bool())  o_code.write("00");
-        else if (i_code.read()[1].to_bool())  o_code.write("01");
-        else if (i_code.read()[2].to_bool())  o_code.write("10");
-        else if (i_code.read()[3].to_bool())  o_code.write("11");
-        else                                  o_code.write("00");        
-
-        //if (i_code.read()[0].to_bool() || i_code.read()[1].to_bool() || i_code.read()[2].to_bool() || i_code.read()[3].to_bool() )
-        //    o_valid.write('1');
-        //else
-        //    o_valid.write('0');
-        o_valid.write(i_code.read()[0].to_bool() ||
-                      i_code.read()[1].to_bool() ||
-                      i_code.read()[2].to_bool() ||
-                      i_code.read()[3].to_bool() );
+        if      (i_code.read()[0].to_bool()) { o_code.write("00");   o_valid.write('1'); }
+        else if (i_code.read()[1].to_bool()) { o_code.write("01");   o_valid.write('1'); }
+        else if (i_code.read()[2].to_bool()) { o_code.write("10");   o_valid.write('1'); }
+        else if (i_code.read()[3].to_bool()) { o_code.write("11");   o_valid.write('1'); }
+        else                                   o_code.write("00");        
     }
 
 
@@ -42,8 +33,6 @@ SC_MODULE(priority_enc_4_2__behavior)
 
         //  Input Sensitivity List
         sensitive << i_code
-                  << o_code
-                  << o_valid                  
                   ;
     }
 };
@@ -61,12 +50,15 @@ SC_MODULE(priority_enc_4_2__equation)
     // Architecture Statement - Similar to Process Statement
     void p1()
     {
-        if      (i_code.read()[0].to_bool())  o_code.write("00");
-        else if (i_code.read()[1].to_bool())  o_code.write("01");
-        else if (i_code.read()[2].to_bool())  o_code.write("10");
-        else if (i_code.read()[3].to_bool())  o_code.write("11");
-        else                                  o_code.write("00");        
+        sc_lv<2> o;
 
+        cout << i_code << endl;
+        cout << o << endl;
+
+        o[0] = (i_code.read()[1].to_bool() & ! i_code.read()[0].to_bool()) | (i_code.read()[3].to_bool() & ! i_code.read()[2].to_bool() & ! i_code.read()[0].to_bool());
+        o[1] = (i_code.read()[2].to_bool() & ! i_code.read()[1].to_bool() & ! i_code.read()[0].to_bool()) | (i_code.read()[3].to_bool() & ! i_code.read()[1].to_bool() & ! i_code.read()[0].to_bool());
+
+        o_code.write(o);
 
         o_valid.write(i_code.read()[0].to_bool() ||
                       i_code.read()[1].to_bool() ||
@@ -82,8 +74,6 @@ SC_MODULE(priority_enc_4_2__equation)
 
         //  Input Sensitivity List
         sensitive << i_code
-                  << o_code
-                  << o_valid                  
                   ;
     }
 };

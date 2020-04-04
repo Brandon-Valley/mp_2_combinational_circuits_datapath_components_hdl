@@ -64,11 +64,10 @@ module priority_enc_4_2_v__equation
   (input  [3:0] i_code,
    output [1:0] o_code,
    output       o_valid);
-   
-
-
-  assign o_code[0] = ( i_code[2] & i_code[3] ) | ( i_code[0]  & i_code[1] & i_code[3] );
-  assign o_code[1] = ( i_code[1] & i_code[2]  & i_code[3] ) | ( i_code[0] & i_code[2] & i_code[3] );
+  
+  
+  assign o_code[0] = (i_code[1] & ~i_code[0]) | (i_code[3] & ~i_code[2] & ~i_code[0]);
+  assign o_code[1] = (i_code[2] & ~i_code[1] & ~i_code[0]) | (i_code[3] & ~i_code[1] & ~i_code[0]);
  
   // equation model
   assign o_valid  = i_code[0] |

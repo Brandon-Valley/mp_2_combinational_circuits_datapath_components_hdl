@@ -18,7 +18,7 @@ architecture verify of decoder_2_4_active_low_out_tb is
   signal input : std_logic_vector (1 downto 0) := "00"; -- must be correct
 
 begin
-  duv: entity work.decoder_2_4_active_low_out(equation)
+  duv: entity work.decoder_2_4_active_low_out(behavior)
 
  
   port map(i_code   => i_code  ,   
