@@ -26,11 +26,14 @@ architecture equation of MUX_4_1_2_bit is
         o_f        : out std_logic);
   end component MUX_4_1;
 
-    -- -- temp outs
-  signal fi0 : std_logic_vector(3 downto 0) := i_code_0(0) & i_code_1(0) & i_code_2(0) & i_code_3(0);
-  signal fi1 : std_logic_vector(3 downto 0) := i_code_0(1) & i_code_1(1) & i_code_2(1) & i_code_3(1);
-
+  signal fi0 : std_logic_vector(3 downto 0);
+  signal fi1 : std_logic_vector(3 downto 0);
+  
   begin
+
+    fi0 <= i_code_3(0) & i_code_2(0) & i_code_1(0) & i_code_0(0);
+    fi1 <= i_code_3(1) & i_code_2(1) & i_code_1(1) & i_code_0(1);
+  
     MUX1 : MUX_4_1 port map (i_en, fi0, i_sel_code, o_code(0));
     MUX0 : MUX_4_1 port map (i_en, fi1, i_sel_code, o_code(1));
    
