@@ -1,5 +1,5 @@
 $date
-     Apr 04, 2020       14:29:14
+     Apr 05, 2020       19:18:21
 $end
 
 $version
@@ -11,8 +11,11 @@ $timescale
 $end
 
 $scope module SystemC $end
-$var wire    2  aaaaa  i_code [1:0]  $end
-$var wire    4  aaaab  o_code [3:0]  $end
+$var wire    1  aaaaa  i_en       $end
+$var wire    4  aaaab  i_code [3:0]  $end
+$var wire    1  aaaac  o_A       $end
+$var wire    1  aaaad  o_L       $end
+$var wire    1  aaaae  o_B       $end
 $upscope $end
 $enddefinitions  $end
 
@@ -21,71 +24,224 @@ All initial values are dumped below at time 0 sec = 0 timescale units.
 $end
 
 $dumpvars
-b0 aaaaa
-b1110 aaaab
+0aaaaa
+b0 aaaab
+zaaaac
+zaaaad
+zaaaae
 $end
 
 #10000
-b1 aaaaa
-b1101 aaaab
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 
 #20000
-b10 aaaaa
-b1011 aaaab
+0aaaaa
+b1 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #30000
-b11 aaaaa
-b111 aaaab
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 
 #40000
-b0 aaaaa
-b1110 aaaab
+0aaaaa
+b10 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #50000
-b1 aaaaa
-b1101 aaaab
+1aaaaa
+0aaaac
+1aaaad
+0aaaae
 
 #60000
-b10 aaaaa
-b1011 aaaab
+0aaaaa
+b11 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #70000
-b11 aaaaa
-b111 aaaab
+1aaaaa
+0aaaac
+1aaaad
+0aaaae
 
 #80000
-b0 aaaaa
-b1110 aaaab
+0aaaaa
+b100 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #90000
-b1 aaaaa
-b1101 aaaab
+1aaaaa
+0aaaac
+1aaaad
+0aaaae
 
 #100000
-b10 aaaaa
-b1011 aaaab
+0aaaaa
+b101 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #110000
-b11 aaaaa
-b111 aaaab
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 
 #120000
-b0 aaaaa
-b1110 aaaab
+0aaaaa
+b110 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #130000
-b1 aaaaa
-b1101 aaaab
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 
 #140000
-b10 aaaaa
-b1011 aaaab
+0aaaaa
+b111 aaaab
+zaaaac
+zaaaad
+zaaaae
 
 #150000
-b11 aaaaa
-b111 aaaab
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 
 #160000
-b0 aaaaa
+0aaaaa
+b1000 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#170000
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
+
+#180000
+0aaaaa
+b1001 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#190000
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
+
+#200000
+0aaaaa
+b1010 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#210000
+1aaaaa
+1aaaac
+0aaaad
+0aaaae
+
+#220000
+0aaaaa
+b1011 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#230000
+1aaaaa
+1aaaac
+0aaaad
+0aaaae
+
+#240000
+0aaaaa
+b1100 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#250000
+1aaaaa
+1aaaac
+0aaaad
+0aaaae
+
+#260000
+0aaaaa
+b1101 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#270000
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
+
+#280000
+0aaaaa
 b1110 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#290000
+1aaaaa
+0aaaac
+1aaaad
+0aaaae
+
+#300000
+0aaaaa
+b1111 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#310000
+1aaaaa
+0aaaac
+0aaaad
+1aaaae
+
+#320000
+0aaaaa
+b0 aaaab
+zaaaac
+zaaaad
+zaaaae
+
+#330000
+1aaaaa
+0aaaac
+0aaaad
+0aaaae
 

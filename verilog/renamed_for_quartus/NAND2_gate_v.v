@@ -1,4 +1,4 @@
-// -- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__nand4_gate_v.do
+// -- python C:\Users\Brandon\Documents\Personal_Projects\my_utils\modelsim_utils\auto_run.py -d run_cmd__NAND4_gate_v.do
 
 module NAND2_gate_v
   (input i_a, i_b,

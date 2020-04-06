@@ -4,8 +4,7 @@
 ///////////////////////////////////////////
 //  Behavior Model
 ///////////////////////////////////////////
-module MUX_8_1_v
-// module MUX_8_1_v__behavior
+module MUX_8_1_v__behavior
   (
   input        i_en,
   input  [7:0] i_code,
@@ -28,7 +27,6 @@ endmodule
 ///////////////////////////////////////////
 //  Component Model - Using 2:1 MUXs
 ///////////////////////////////////////////
-// module MUX_8_1_v
 module MUX_8_1_v__cmpnt
   (
   input        i_en,

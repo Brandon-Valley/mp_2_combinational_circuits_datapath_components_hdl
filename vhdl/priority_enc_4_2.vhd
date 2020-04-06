@@ -13,6 +13,9 @@ end priority_enc_4_2;
 
 
 
+
+
+
 architecture behavior of priority_enc_4_2 is
   begin
 
@@ -30,6 +33,12 @@ architecture behavior of priority_enc_4_2 is
                '0';         
     
 end architecture behavior;
+
+
+
+
+
+
 
 
 architecture equation of priority_enc_4_2 is

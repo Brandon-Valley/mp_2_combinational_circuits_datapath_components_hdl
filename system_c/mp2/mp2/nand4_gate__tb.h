@@ -35,8 +35,8 @@ void nand4_gate__tb()
     //=============================//
     //nand4__equation DUT("nand4_gate.h");
     //nand4__behavior DUT("nand4_gate.h");
-    //nand4_cmpnt_self DUT("nand4_gate.h");
-    nand4_cmpnt_prim DUT("nand4_gate.h");
+    nand4_cmpnt_self DUT("nand4_gate.h");
+    //nand4_cmpnt_prim DUT("nand4_gate.h");
 
 
     //=============================//

@@ -14,10 +14,14 @@ module MUX_4_1_8_bit_v
   output [7:0] o_code);
   
   
+  // assign o_code = i_sel_code == 2'b00 & i_en ? i_code_0 :
+                  // i_sel_code == 2'b01 & i_en ? i_code_1 :
+                  // i_sel_code == 2'b10 & i_en ? i_code_2 :
+                  // i_sel_code == 2'b11 & i_en ? i_code_3 : 8'b00000000;
   assign o_code = i_sel_code == 2'b00 & i_en ? i_code_0 :
                   i_sel_code == 2'b01 & i_en ? i_code_1 :
                   i_sel_code == 2'b10 & i_en ? i_code_2 :
-                  i_sel_code == 2'b11 & i_en ? i_code_3 : 8'b00000000;
+                  i_sel_code == 2'b11 & i_en ? i_code_3 : 8'bZZZZZZZZ;
   
 endmodule
 

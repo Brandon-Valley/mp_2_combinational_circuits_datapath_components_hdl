@@ -32,7 +32,8 @@ SC_MODULE(MUX_4_1_8_bit__behavior)
             if (i_sel_code.read() == "11")  o_code = i_code_3;
         }
         else
-            o_code = "00000000";
+            o_code = "ZZZZZZZZ";
+            //o_code = "00000000";
     }
 
 

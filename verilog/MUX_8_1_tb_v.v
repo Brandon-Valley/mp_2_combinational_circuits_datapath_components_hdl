@@ -15,8 +15,8 @@ module MUX_8_1_tb_v;
   integer i;
   
   // duv port map options:
-  MUX_8_1_v__behavior duv (.i_en(i_en), .i_code(i_code), .i_sel_code(i_sel_code), .o_f(o_f));
-  // MUX_8_1_v__cmpnt duv (.i_en(i_en), .i_code(i_code), .i_sel_code(i_sel_code), .o_f(o_f));
+  // MUX_8_1_v__behavior duv (.i_en(i_en), .i_code(i_code), .i_sel_code(i_sel_code), .o_f(o_f));
+  MUX_8_1_v__cmpnt duv (.i_en(i_en), .i_code(i_code), .i_sel_code(i_sel_code), .o_f(o_f));
   
   //procedure statement
   initial begin

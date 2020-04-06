@@ -13,8 +13,9 @@ module priority_enc_4_2_tb_v;
   integer i;
   
   // duv port map options:
-  // priority_enc_4_2_v__no_always duv (.i_code(i_code), .o_code(o_code), .o_valid(o_valid)); 
-  priority_enc_4_2_v__always duv (.i_code(i_code), .o_code(o_code), .o_valid(o_valid)); 
+  // priority_enc_4_2_v__no_always duv (.i_code(i_code), .o_code(o_code), .o_valid(o_valid));  // BEHAVIOR MODEL!!!!!!!!!!!!!!!!!!
+  // priority_enc_4_2_v__always duv (.i_code(i_code), .o_code(o_code), .o_valid(o_valid)); 
+  priority_enc_4_2_v__equation duv (.i_code(i_code), .o_code(o_code), .o_valid(o_valid)); 
   
   //procedure statement
   initial begin

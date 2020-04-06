@@ -1,7 +1,7 @@
 
 
 
-module or2_gate_v
+module OR2_gate_v
   (input i_a, i_b,
    output o_f);
    

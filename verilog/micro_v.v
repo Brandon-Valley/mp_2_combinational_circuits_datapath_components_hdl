@@ -11,18 +11,18 @@ module micro_v
   output       o_B);
   
   
-  assign o_A = ~i_en ? 'Z:
+  assign o_A = ~i_en ? 1'bZ:
                i_code == 4'b1010 | 
                i_code == 4'b1011 |
                i_code == 4'b1100 ? 1 : 0;
   
-  assign o_L = ~i_en ? 'Z:
+  assign o_L = ~i_en ? 1'bZ:
                i_code == 4'b0011 | 
                i_code == 4'b0100 |
                i_code == 4'b0010 |
                i_code == 4'b1110 ? 1 : 0;
                
-  assign o_B = ~i_en ? 'Z:
+  assign o_B = ~i_en ? 1'bZ:
                i_code == 4'b1111 ? 1 : 0;
   
 endmodule

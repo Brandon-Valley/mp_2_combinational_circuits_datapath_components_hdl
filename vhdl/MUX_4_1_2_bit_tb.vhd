@@ -63,7 +63,7 @@ begin
       apply_test(input);
       
 
-      input <= input + "0001";
+      input <= input + "001";
      end loop;
 
     

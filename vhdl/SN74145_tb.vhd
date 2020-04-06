@@ -77,7 +77,7 @@ begin
     end procedure apply_test;
     
   begin
-    for i in 0 to 18 loop
+    for i in 0 to 64 loop
       -- apply_test(input(3), input(2), input(1), input(0));
       apply_test(input);
       

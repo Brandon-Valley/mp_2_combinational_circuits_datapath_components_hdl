@@ -3,8 +3,7 @@
 ////////////////////////////////
 //  Behavior Model
 ////////////////////////////////
-module deMUX_1_8_v
-// module deMUX_1_8_v__behavior
+module deMUX_1_8_v__behavior
   (
   input  i_a,
   input  [7:0] i_sel_code, 
@@ -26,7 +25,6 @@ endmodule
 ////////////////////////////////
 //  Component Model - Using 4:1 deMUX's
 ////////////////////////////////
-// module deMUX_1_8_v
 module deMUX_1_8_v__cmpnt
   (
   input  i_a,
