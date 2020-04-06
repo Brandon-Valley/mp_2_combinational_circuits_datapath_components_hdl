@@ -33,8 +33,17 @@ module deMUX_1_8_v__cmpnt
   output [7:0] o_code);
   
   
-  deMUX_1_4_v demux1 (i_a, i_sel_code[3:0], o_code[3:0]);
-  deMUX_1_4_v demux2 (i_a, i_sel_code[7:4], o_code[7:4]);
+  // deMUX_1_4_v demux1 (i_a, i_sel_code[3:0], o_code[3:0]);
+  // deMUX_1_4_v demux2 (i_a, i_sel_code[7:4], o_code[7:4]);  
+  
+  wire [3:0] demux1f;
+  wire [3:0] demux2f;
+  
+  deMUX_1_4_v demux1 (i_a, i_sel_code[1:0] , demux1f);
+  deMUX_1_4_v demux2 (i_a, i_sel_code[1:0] , demux2f);
+  
+  assign o_code = i_sel_code[2] ? {demux2f, 4'b0000} :
+                                  {4'b0000, demux1f};
   
 endmodule
 

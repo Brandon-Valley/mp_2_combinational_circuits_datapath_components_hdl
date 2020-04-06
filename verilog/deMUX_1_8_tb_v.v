@@ -14,8 +14,8 @@ module deMUX_1_8_tb_v;
   integer i;
   
   // duv port map options:
-  deMUX_1_8_v__behavior duv (.i_a(i_a), .i_sel_code(i_sel_code), .o_code(o_code)); 
-  // deMUX_1_8_v__cmpnt duv (.i_a(i_a), .i_sel_code(i_sel_code), .o_code(o_code)); 
+  // deMUX_1_8_v__behavior duv (.i_a(i_a), .i_sel_code(i_sel_code), .o_code(o_code)); 
+  deMUX_1_8_v__cmpnt duv (.i_a(i_a), .i_sel_code(i_sel_code), .o_code(o_code)); 
   
   //procedure statement
   initial begin
