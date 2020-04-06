@@ -32,16 +32,41 @@ end SN74145;
 architecture equation of SN74145 is
   begin
 
-  o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_1 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_2 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_3 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_4 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_5 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_6 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_7 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_8 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
-  o_9 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+-- ( i_d = '0' and i_c = '0' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '0' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '0' and i_b = '1' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '0' and i_b = '1' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '1' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '1' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '1' and i_b = '1' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '0' and i_c = '1' and i_b = '1' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '1' and i_c = '0' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+-- ( i_d = '1' and i_c = '0' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')
+
+
+
+
+  -- o_0 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_1 <= '0' when  i_a = '0' and i_b = '0' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_2 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_3 <= '0' when  i_a = '0' and i_b = '0' and i_c = '1' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_4 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_5 <= '0' when  i_a = '0' and i_b = '1' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_6 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_7 <= '0' when  i_a = '0' and i_b = '1' and i_c = '1' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_8 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '0' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+  -- o_9 <= '0' when  i_a = '1' and i_b = '0' and i_c = '0' and i_d = '1' and i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0'  else '1';
+    
+  o_0 <= '0' when  ( i_d = '0' and i_c = '0' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_1 <= '0' when  ( i_d = '0' and i_c = '0' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_2 <= '0' when  ( i_d = '0' and i_c = '0' and i_b = '1' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_3 <= '0' when  ( i_d = '0' and i_c = '0' and i_b = '1' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_4 <= '0' when  ( i_d = '0' and i_c = '1' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_5 <= '0' when  ( i_d = '0' and i_c = '1' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_6 <= '0' when  ( i_d = '0' and i_c = '1' and i_b = '1' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_7 <= '0' when  ( i_d = '0' and i_c = '1' and i_b = '1' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_8 <= '0' when  ( i_d = '1' and i_c = '0' and i_b = '0' and  i_a = '0' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
+  o_9 <= '0' when  ( i_d = '1' and i_c = '0' and i_b = '0' and  i_a = '1' ) and (i_cs = '1' and i_n_cs_0 = '0' and i_n_cs_1 = '0')  else '1';
     
     
 end architecture equation;
