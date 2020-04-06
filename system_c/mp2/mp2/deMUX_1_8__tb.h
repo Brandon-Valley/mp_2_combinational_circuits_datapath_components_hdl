@@ -25,7 +25,7 @@ void deMUX_1_8__tb()
     //  Define IO Ports
     //=============================//
     sc_signal <bool>     i_a       ;
-    sc_signal <sc_lv<8>> i_sel_code;
+    sc_signal <sc_lv<3>> i_sel_code;
     sc_signal <sc_lv<8>> o_code    ;
 
 
@@ -64,7 +64,7 @@ void deMUX_1_8__tb()
     print_sim_header("deMUX_1_8");
     double num_combos_to_test = pow(num_bits_needed_in_sim_vec, 2) + 2; // run 2 extra so waveform always ends with all high, then all low
 
-    for (int i = 0; i < pow(9, 2) + 1; i++)
+    for (int i = 0; i < pow(4, 2) + 1; i++)
     {
         vector<int> sv = int_to_binary_vec__with_rollover(i, num_bits_needed_in_sim_vec); // simulation vector
         cout << "In deMUX_1_8__tb.h, Sim:  i:" << i << "    sv:" << sv << endl;

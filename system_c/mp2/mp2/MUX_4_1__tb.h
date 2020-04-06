@@ -27,7 +27,7 @@ void MUX_4_1__tb()
     sc_signal <bool>     i_en      ;
     sc_signal <sc_lv<4>> i_code    ;
     sc_signal <sc_lv<2>> i_sel_code;
-    sc_signal <bool>     o_f       ;
+    sc_signal <sc_logic> o_f       ;
 
 
     //=============================//

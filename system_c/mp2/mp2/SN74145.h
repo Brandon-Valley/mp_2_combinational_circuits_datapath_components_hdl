@@ -35,16 +35,16 @@ SC_MODULE(SN74145__behavior)
     // Architecture Statement - Similar to Process Statement
     void p1()
     {
-        if (( ! i_a && ! i_b && ! i_c && ! i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_0 = 1;  else  o_0 = 0;
-        if (( ! i_a && ! i_b && ! i_c &&   i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_1 = 1;  else  o_1 = 0;
-        if (( ! i_a && ! i_b &&   i_c && ! i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_2 = 1;  else  o_2 = 0;
-        if (( ! i_a && ! i_b &&   i_c &&   i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_3 = 1;  else  o_3 = 0;
-        if (( ! i_a &&   i_b && ! i_c && ! i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_4 = 1;  else  o_4 = 0;
-        if (( ! i_a &&   i_b && ! i_c &&   i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_5 = 1;  else  o_5 = 0;
-        if (( ! i_a &&   i_b &&   i_c && ! i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_6 = 1;  else  o_6 = 0;
-        if (( ! i_a &&   i_b &&   i_c &&   i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_7 = 1;  else  o_7 = 0;
-        if ((   i_a && ! i_b && ! i_c && ! i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_8 = 1;  else  o_8 = 0;
-        if ((   i_a && ! i_b && ! i_c &&   i_d )   &&   (i_cs && ! i_n_cs_0 && ! i_n_cs_1))  o_9 = 1;  else  o_9 = 0;
+        if (( ~ i_d & ~ i_c & ~ i_b & ~ i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_0 = 1;  else  o_0 = 0;
+        if (( ~ i_d & ~ i_c & ~ i_b &   i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_1 = 1;  else  o_1 = 0;
+        if (( ~ i_d & ~ i_c &   i_b & ~ i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_2 = 1;  else  o_2 = 0;
+        if (( ~ i_d & ~ i_c &   i_b &   i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_3 = 1;  else  o_3 = 0;
+        if (( ~ i_d &   i_c & ~ i_b & ~ i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_4 = 1;  else  o_4 = 0;
+        if (( ~ i_d &   i_c & ~ i_b &   i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_5 = 1;  else  o_5 = 0;
+        if (( ~ i_d &   i_c &   i_b & ~ i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_6 = 1;  else  o_6 = 0;
+        if (( ~ i_d &   i_c &   i_b &   i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_7 = 1;  else  o_7 = 0;
+        if ((   i_d & ~ i_c & ~ i_b & ~ i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_8 = 1;  else  o_8 = 0;
+        if ((   i_d & ~ i_c & ~ i_b &   i_a ) & (i_cs & ~i_n_cs_0 & ~i_n_cs_1))  o_9 = 1;  else  o_9 = 0;
     }
 
 
