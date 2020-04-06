@@ -5,13 +5,13 @@
 module deMUX_1_4_v
   (
   input  i_a,
-  input  [3:0] i_sel_code, 
+  input  [1:0] i_sel_code, 
   output [3:0] o_code);
   
-  assign o_code[0] = (i_a & i_sel_code[0]) ? 1 : 0;
-  assign o_code[1] = (i_a & i_sel_code[1]) ? 1 : 0;
-  assign o_code[2] = (i_a & i_sel_code[2]) ? 1 : 0;
-  assign o_code[3] = (i_a & i_sel_code[3]) ? 1 : 0;
+  assign o_code[0] = (i_a & i_sel_code == 2'b00) ? 1 : 0;
+  assign o_code[1] = (i_a & i_sel_code == 2'b01) ? 1 : 0;
+  assign o_code[2] = (i_a & i_sel_code == 2'b10) ? 1 : 0;
+  assign o_code[3] = (i_a & i_sel_code == 2'b11) ? 1 : 0;
   
 endmodule
 
